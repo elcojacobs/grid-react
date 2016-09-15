@@ -1,7 +1,7 @@
 export default function() {
     return {
-        rows: 2,
-        cols: 2,
+        rows: 10,
+        cols: 20,
         showCoordinates: true
     };
 }

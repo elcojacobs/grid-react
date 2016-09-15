@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Tile from './tile.js';
+import TileEmpty from './tile-empty.js';
+import TileMotorValve from './tile-motor-valve';
 
 class TileGrid extends Component {
     constructor(props) {
@@ -13,10 +15,10 @@ class TileGrid extends Component {
     getTileContent(x, y) {
         for (let tileContent of this.props.layout) {
             if(tileContent.x == x && tileContent.y == y){
-                return <span>valve</span>;
+                return <TileMotorValve />;
             }
         }
-        return null;
+        return <TileEmpty />;
     }
 
     render() {        
