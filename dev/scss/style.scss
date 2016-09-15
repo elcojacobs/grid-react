@@ -1,5 +1,39 @@
-$primary: #006699;
+$tilesize: 50px;
 
-h2 {
-	color: $primary;
+.tile-block{
+	height: $tilesize;
+	width: $tilesize;
+}
+
+
+.tile-block-overlap{
+	@extend .tile-block;
+	position: absolute;
+}
+
+.row {
+	display: block;
+	float: left;
+	clear: left;
+
+	.tile {
+		@extend .tile-block;
+		display: block;
+		float: left;
+		box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.4);
+		
+		.coordinates {
+			float: right;
+			margin: 3px;
+			font-size: 10px;
+		}
+
+		.tile-content {
+			@extend .tile-block-overlap;
+			background-color: #aaddff;
+			float: left;
+			position: absolute;
+			z-index: -1;
+		}
+	}
 }

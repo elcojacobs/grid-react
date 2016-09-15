@@ -1,7 +1,7 @@
-export const selectUser = (user) => {
-    console.log("You clicked on user: ", user.first);
+export const gridClick = (coordinates) => {
+    console.log('You clicked on valve: ', coordinates.y, coordinates.x);
     return {
-        type: 'USER_SELECTED',
-        payload: user
-    }
+        type: 'GRID_CLICKED',
+        payload: coordinates
+    };
 };
